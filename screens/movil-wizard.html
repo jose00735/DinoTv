@@ -1,0 +1,46 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DinoTV · Wizard (móvil)</title><link rel="stylesheet" href="css/wiiu.css"><link rel="stylesheet" href="css/mobile.css">
+<style>
+.steps{display:flex;gap:6px;margin:0 2px 14px}
+.steps i{flex:1;height:8px;border-radius:9px;background:rgba(58,74,90,.12)} .steps i.d{background:var(--teal)} .steps i.c{background:var(--sky)}
+.serie{display:flex;gap:12px;align-items:center}
+.serie .p{width:52px;height:68px;border-radius:14px;position:relative;overflow:hidden;flex:none}
+.lbl{font-size:11px;font-weight:900;color:var(--ink-2);margin:8px 0 5px}
+.seg{display:flex;background:rgba(58,74,90,.08);border-radius:14px;padding:4px;gap:4px}
+.seg span{flex:1;text-align:center;padding:8px 0;border-radius:11px;font-weight:800;font-size:13px;color:var(--ink-2)}
+.seg span.on{background:#fff;color:var(--sky-d);box-shadow:var(--shadow)}
+.fill{height:26px;border-radius:10px;background:rgba(58,74,90,.08);overflow:hidden;display:flex;font-size:10px;font-weight:900;color:#fff}
+.fill i{display:grid;place-items:center}
+.sum{background:linear-gradient(135deg,#E1F5FE,#E0F2F1);border:2px solid #fff}
+.sum p{font-size:13px;font-weight:700;margin:4px 0}
+.foot{flex:none;padding:10px 16px 26px;display:flex;gap:10px}
+.content .chip{height:30px;padding:0 12px;margin:0 4px 4px 0}
+.card{padding:12px;margin-bottom:10px}
+.foot .pill{flex:1;justify-content:center}
+.time{font-size:24px;font-weight:900;color:var(--sky-d);background:#fff;border-radius:14px;padding:4px 14px;box-shadow:var(--shadow);display:inline-block}
+</style></head><body>
+<div class="phone"><div class="notch"></div><div class="screen grid-bg">
+  <div class="statusbar"><span>15:20</span><span>📶 🔋</span></div>
+  <div class="appbar"><span style="font-size:22px">✕</span><h1>Nueva serie</h1><span class="muted bold tiny">Paso 5 de 6</span></div>
+  <div class="content">
+    <div class="steps"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="c"></i><i></i></div>
+    <div class="card serie"><div class="p"><div class="art art-ninja" style="font-size:32px">🥷</div></div>
+      <div><b style="font-size:17px">Ninja Byte</b><div class="tiny muted bold">24 episodios · 23 min c/u · T1</div><div style="margin-top:6px"><span class="badge lin">LINEAL</span> <span class="badge" style="background:var(--ink-2)">+7</span></div></div></div>
+    <div class="card">
+      <div class="lbl" style="margin-top:0">¿QUÉ DÍAS?</div>
+      <div><span class="chip on">L</span><span class="chip on">M</span><span class="chip on">X</span><span class="chip on">J</span><span class="chip on">V</span><span class="chip">S</span><span class="chip">D</span></div>
+      <div class="lbl">HORA DE INICIO</div><span class="time">18:30</span>
+      <div class="lbl">DIMENSIONAR POR</div>
+      <div class="seg"><span>Episodios</span><span class="on">Tiempo</span></div>
+      <div class="lbl">DURACIÓN DEL SLOT</div>
+      <div><span class="chip">30'</span><span class="chip on">60'</span><span class="chip">90'</span><span class="chip">120'</span></div>
+      <div class="lbl">OCUPACIÓN DEL SLOT · caben 2 episodios</div>
+      <div class="fill"><i style="width:38%;background:#26A69A">Ep</i><i style="width:6%;background:var(--amber)">C</i><i style="width:38%;background:#26A69A">Ep</i><i style="width:18%;background:var(--sky)">Promos 10:40</i></div>
+    </div>
+    <div class="card sum">
+      <p>📆 Del <b>lun 16 nov</b> al <b>vie 11 dic</b> · ✅ sin conflictos</p>
+      <p>🔁 Al terminar: <b>pasar a la temporada 2</b> ▾</p>
+    </div>
+  </div>
+  <div class="foot"><span class="pill ghost">◀ Atrás</span><span class="pill primary">Siguiente ▶</span></div>
+</div></div></body></html>

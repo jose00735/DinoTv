@@ -1,0 +1,20 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DinoTV · Fin de emisión</title><link rel="stylesheet" href="css/wiiu.css">
+<style>
+.bars{position:absolute;inset:0;display:grid;grid-template-columns:repeat(7,1fr)}
+.bars i:nth-child(1){background:#C0C0C0}.bars i:nth-child(2){background:#C0C000}.bars i:nth-child(3){background:#00C0C0}.bars i:nth-child(4){background:#00C000}.bars i:nth-child(5){background:#C000C0}.bars i:nth-child(6){background:#C00000}.bars i:nth-child(7){background:#0000C0}
+.low{position:absolute;left:0;right:0;bottom:0;height:120px;display:grid;grid-template-columns:repeat(7,1fr)}
+.low i:nth-child(odd){background:#111} .low i:nth-child(even){background:#eee}
+.disc{position:absolute;left:50%;top:50%;width:440px;height:440px;transform:translate(-50%,-56%);border-radius:50%;background:#fff;border:10px solid #222;box-shadow:0 0 0 14px rgba(255,255,255,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;overflow:hidden}
+.disc .logo-dino{width:96px;height:96px;font-size:58px;border-radius:30px}
+.disc h2{font-size:30px;font-weight:900}
+.disc .clock{font-size:64px;font-weight:900;color:var(--sky-d);letter-spacing:2px}
+.disc p{font-weight:700;color:var(--ink-2);font-size:15px;max-width:330px}
+.scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.08) 0 2px,transparent 2px 4px);pointer-events:none}
+</style></head><body>
+<div class="stage-tv">
+  <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="low"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="disc"><div class="logo-dino">🦖</div><h2>DinoTV · Canal 1</h2><div class="clock">03:47</div><p>Fin de las transmisiones. Regresamos a las <b>6:00</b> con «Despertar Anime». ¡Buenas noches!</p></div>
+  <div class="scan"></div>
+</div></body></html>

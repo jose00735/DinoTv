@@ -1,0 +1,65 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DinoTV · Media Center PC</title><link rel="stylesheet" href="css/wiiu.css">
+<style>
+.side{width:230px;flex:none;background:rgba(255,255,255,.75);border-right:1px solid #fff;padding:20px 14px;display:flex;flex-direction:column;gap:6px;z-index:2}
+.side .brand{display:flex;gap:10px;align-items:center;font-weight:900;font-size:22px;color:var(--sky-d);margin:0 6px 18px}
+.side a{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:16px;font-weight:800;color:var(--ink-2);font-size:15px}
+.side a.on{background:#fff;color:var(--sky-d);box-shadow:var(--shadow)}
+.main{flex:1;padding:22px 26px;display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto 1fr;gap:18px;position:relative;z-index:1}
+.head{grid-column:1/3;display:flex;align-items:center;gap:12px}
+.head h1{font-size:28px;font-weight:900;flex:1}
+.monitor{padding:0;display:flex;flex-direction:column}
+.monitor .vid{height:300px;position:relative;border-radius:20px 20px 0 0;overflow:hidden}
+.monitor .vid .dino-char{font-size:120px}
+.monitor .info{padding:14px 18px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.kpi{background:#F4F7FA;border-radius:14px;padding:10px 12px}.kpi b{display:block;font-size:22px;font-weight:900;color:var(--sky-d)}.kpi span{font-size:12px;font-weight:800;color:var(--ink-2)}
+.queue{padding:16px 18px}
+.q{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px dashed rgba(58,74,90,.12);font-size:14px;font-weight:700}
+.q .t{width:70px;font-family:ui-monospace,monospace;font-size:13px;color:var(--ink-2)} .q .k{width:86px}
+.q.cur{background:#E1F5FE;border-radius:12px;padding:8px;margin:0 -8px}
+.wk{grid-column:1/3;padding:14px 18px}
+.wkgrid{display:grid;grid-template-columns:60px repeat(7,1fr);gap:6px;margin-top:8px}
+.wkgrid .h{font-size:12px;font-weight:900;color:var(--ink-3);text-align:center}
+.wkgrid .r{font-size:12px;font-weight:800;color:var(--ink-3);display:flex;align-items:center}
+.wkgrid .c{height:34px;border-radius:10px;color:#fff;font-size:11px;font-weight:800;padding:4px 7px;overflow:hidden;white-space:nowrap;border:2px solid rgba(255,255,255,.7)}
+.alert{display:flex;gap:10px;align-items:center;background:#FFF3E0;border-radius:14px;padding:10px 12px;font-size:13px;font-weight:700;margin-top:10px}
+</style></head><body>
+<div class="stage-pc grid-bg">
+  <nav class="side">
+    <div class="brand"><div class="logo-dino">🦖</div>DinoTV</div>
+    <a class="on">📡 Monitor</a><a>🗓️ Parrilla</a><a>📚 Biblioteca</a><a>🧙 Wizard</a><a>🎬 Estrenos</a><a>🎞️ Continuidad</a><a>📼 Grabaciones</a><a>📜 Registro</a>
+    <div style="flex:1"></div><a>⚙️ Ajustes</a>
+    <div class="pill" style="justify-content:center;margin-top:8px"><span style="color:#43A047">●</span> NTP OK · ±12 ms</div>
+  </nav>
+  <section class="main">
+    <div class="head"><h1>Monitor de continuidad</h1><span class="pill ghost">Canal 1 · DinoTV ▾</span><span class="pill primary">＋ Reprogramar</span><div class="clock" style="font-weight:900;font-size:22px;background:#fff;border-radius:999px;padding:8px 18px;box-shadow:var(--shadow)">15:31:08</div></div>
+    <div class="tile monitor">
+      <div class="vid"><div class="video"><div class="scene"></div><div class="dino-char" style="left:40%">🦖</div></div><div class="dog"><div class="logo-dino">🦖</div>DinoTV</div><span class="badge live" style="position:absolute;top:16px;left:16px">● AL AIRE</span></div>
+      <div class="info"><div style="display:flex;gap:8px;align-items:center"><b style="font-size:20px">Dino Rangers · T1 E15</b><span class="badge lin">LINEAL</span></div>
+        <div class="progress" style="margin-top:10px;height:10px"><i style="width:8%"></i></div>
+        <div class="kpis"><div class="kpi"><b>+38 ms</b><span>Desfase actual</span></div><div class="kpi"><b>0</b><span>Fallos hoy</span></div><div class="kpi"><b>99.98%</b><span>Al aire 7 días</span></div></div>
+      </div>
+    </div>
+    <div class="tile queue"><b style="font-size:17px">Cola de emisión</b>
+      <div class="q"><span class="t">15:30:00</span><span class="k"><span class="badge rep">BUMPER</span></span>Regresamos con Dino Rangers</div>
+      <div class="q cur"><span class="t">15:30:04</span><span class="k"><span class="badge live">EP</span></span>Dino Rangers · Ep. 15 (parte 1)</div>
+      <div class="q"><span class="t">15:41:20</span><span class="k"><span class="badge epi">CORTE</span></span>Ya volvemos · Promo Lumen · Anuncio retro</div>
+      <div class="q"><span class="t">15:43:05</span><span class="k"><span class="badge live">EP</span></span>Dino Rangers · Ep. 15 (parte 2)</div>
+      <div class="q"><span class="t">15:54:30</span><span class="k"><span class="badge">PROMO</span></span>ESTRENO sáb 8 PM · La Isla…</div>
+      <div class="q"><span class="t">15:55:00</span><span class="k"><span class="badge new">PROMO</span></span>Esta semana en DinoTV</div>
+      <div class="q"><span class="t">15:59:52.4</span><span class="k"><span class="badge rep">AJUSTE</span></span>Cartón dinámico 3.6 s</div>
+      <div class="q"><span class="t">15:59:56</span><span class="k"><span class="badge rep">IDENT</span></span>DinoTV ident corto</div>
+      <div class="q"><span class="t">16:00:00</span><span class="k"><span class="badge lin">EP</span></span>Las Crónicas de Lumen · T2E3</div>
+      <div class="alert">⚠️ «Mecha Kaiju Z – Ep. 9.mkv» no encontrado. Se emitirá relleno el jueves 17:00. <b style="color:var(--sky-d)">Resolver</b></div>
+    </div>
+    <div class="tile wk"><b style="font-size:17px">Semana 46</b>
+      <div class="wkgrid">
+        <span></span><span class="h">LUN</span><span class="h">MAR</span><span class="h">MIÉ</span><span class="h">JUE</span><span class="h">VIE</span><span class="h">SÁB</span><span class="h">DOM</span>
+        <span class="r">15:00</span><span class="c" style="background:var(--teal)">Dino Rangers</span><span class="c" style="background:var(--teal)">Dino Rangers</span><span class="c" style="background:var(--teal)">Dino Rangers</span><span class="c" style="background:var(--teal)">Dino Rangers</span><span class="c" style="background:var(--teal)">Dino Rangers</span><span class="c" style="background:#5C6BC0">Matiné</span><span class="c" style="background:#5C6BC0">Matiné</span>
+        <span class="r">16:00</span><span class="c" style="background:var(--violet)">Lumen</span><span class="c" style="background:var(--violet)">Lumen</span><span class="c" style="background:var(--violet)">Lumen</span><span class="c" style="background:var(--violet)">Lumen</span><span class="c" style="background:var(--violet)">Lumen</span><span class="c" style="background:#5C6BC0">Matiné</span><span class="c" style="background:#5C6BC0">Matiné</span>
+        <span class="r">20:00</span><span class="c" style="background:var(--coral)">🎬 Cine de Lunes</span><span class="c" style="background:#26A69A">Ninja Byte</span><span class="c" style="background:#26A69A">Ninja Byte</span><span class="c" style="background:#26A69A">Ninja Byte</span><span class="c" style="background:#EC407A">Terror +13</span><span class="c" style="background:var(--coral)">🎬 ESTRENO</span><span class="c" style="background:var(--amber)">Mecha Kaiju</span>
+      </div>
+    </div>
+  </section>
+</div></body></html>

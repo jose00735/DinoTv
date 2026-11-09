@@ -1,0 +1,35 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DinoTV · Append de episodios (móvil)</title><link rel="stylesheet" href="css/wiiu.css"><link rel="stylesheet" href="css/mobile.css">
+<style>
+.ep{display:flex;align-items:center;gap:10px;padding:9px 2px;border-bottom:1px dashed rgba(58,74,90,.12);font-weight:800;font-size:14px}
+.ep:last-child{border:0}
+.ck{width:24px;height:24px;border-radius:8px;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:14px}
+.ck.off{background:#fff;border:2px solid rgba(58,74,90,.2)}
+.ep .n{width:56px;color:var(--ink-3);font-size:12px}
+.ep .d{margin-left:auto;font-size:12px;color:var(--ink-2)}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:16px;border:2px solid rgba(58,74,90,.1);margin-bottom:8px;font-size:13px;font-weight:700}
+.opt.on{border-color:var(--sky);background:#E1F5FE}
+.rad{width:20px;height:20px;border-radius:50%;border:3px solid var(--ink-3);flex:none;margin-top:1px}
+.opt.on .rad{border:6px solid var(--sky)}
+.foot{position:absolute;left:16px;right:16px;bottom:24px;display:flex;gap:10px}.foot .pill{flex:1;justify-content:center}
+</style></head><body>
+<div class="phone"><div class="notch"></div><div class="screen grid-bg">
+  <div class="statusbar"><span>09:02</span><span>📶 🔋</span></div>
+  <div class="appbar"><span style="font-size:22px">✕</span><h1>Agregar episodios</h1></div>
+  <div class="content">
+    <div class="card" style="display:flex;gap:12px;align-items:center;background:linear-gradient(135deg,#FFF8E1,#fff)">
+      <div style="font-size:34px">✨</div><div><b>4 archivos nuevos</b> en<br><span class="tiny muted bold">/Anime/Dino Rangers/Temporada 2/</span></div></div>
+    <div class="sec">SE AGREGARÁN AL FINAL · tras S01E24 (#24)</div>
+    <div class="card" style="padding:4px 14px">
+      <div class="ep"><span class="ck">✓</span><span class="n">#25</span>S02E01 «Huevos de cristal»<span class="d">23:41</span></div>
+      <div class="ep"><span class="ck">✓</span><span class="n">#26</span>S02E02 «El rugido»<span class="d">23:38</span></div>
+      <div class="ep"><span class="ck">✓</span><span class="n">#27</span>S02E03 «Tormenta jurásica»<span class="d">23:40</span></div>
+      <div class="ep"><span class="ck off"></span><span class="n">—</span>S02E03 (copia)<span class="d" style="color:var(--coral)">duplicado</span></div>
+    </div>
+    <div class="sec">LA SERIE ESTÁ EN REPETICIÓN (VUELTA 2, EP. 9)</div>
+    <div class="opt on"><span class="rad"></span><div>Terminar la vuelta y luego seguir con la T2<div class="tiny muted">Los nuevos episodios empiezan el jue 3 dic</div></div></div>
+    <div class="opt"><span class="rad"></span><div>Saltar ya a los episodios nuevos<div class="tiny muted">Desde mañana 15:00</div></div></div>
+    <div class="card" style="display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:14px">📣 Promo «¡Nuevos episodios!»<span class="chip on" style="margin:0">ON</span></div>
+  </div>
+  <div class="foot"><span class="pill ghost">Ver cambios</span><span class="pill primary">Agregar 3 ▶</span></div>
+</div></div></body></html>

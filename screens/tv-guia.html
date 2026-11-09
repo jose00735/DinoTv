@@ -1,0 +1,54 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DinoTV · Guía</title><link rel="stylesheet" href="css/wiiu.css">
+<style>
+.detail{position:absolute;top:84px;left:40px;right:40px;height:200px;display:flex;gap:24px;padding:20px}
+.detail .poster{width:240px;flex:none;border-radius:18px;position:relative;overflow:hidden;border:4px solid #fff;box-shadow:var(--shadow)}
+.detail h2{font-size:34px;font-weight:900}
+.detail p{font-size:17px;line-height:1.5;color:var(--ink-2);max-width:760px;margin-top:6px}
+.epg{position:absolute;top:304px;left:40px;right:40px;bottom:92px;padding:14px 16px}
+.times{display:grid;grid-template-columns:150px repeat(6,1fr);font-weight:800;color:var(--ink-2);font-size:15px;padding-bottom:8px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:8px;margin-bottom:10px;height:62px}
+.chn{background:#fff;border-radius:16px;display:flex;align-items:center;gap:10px;padding:0 12px;font-weight:900;box-shadow:var(--shadow);color:var(--sky-d)}
+.lane{position:relative}
+.prog{position:absolute;top:0;bottom:0;border-radius:14px;background:#fff;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,40,80,.1);padding:7px 12px;font-weight:800;font-size:15px;overflow:hidden;white-space:nowrap}
+.prog small{display:block;font-weight:600;color:var(--ink-2);font-size:12px}
+.prog.past{opacity:.55}
+.prog.sel{box-shadow:0 0 0 4px var(--sky),0 0 22px rgba(41,182,246,.5);transform:scale(1.03);z-index:2}
+.prog.c1{border-left:8px solid var(--teal)} .prog.c2{border-left:8px solid var(--violet)} .prog.c3{border-left:8px solid var(--amber)} .prog.c4{border-left:8px solid var(--coral)}
+.now{position:absolute;top:30px;bottom:6px;left:calc(16px + 158px + (100% - 32px - 158px) * .0333);width:3px;background:#E53935;border-radius:3px;z-index:4}
+.now::before{content:"15:12";position:absolute;top:-22px;left:-22px;background:#E53935;color:#fff;font-size:12px;font-weight:900;padding:2px 8px;border-radius:8px}
+</style></head><body>
+<div class="stage-tv grid-bg">
+  <div class="topbar"><div class="brand"><div class="logo-dino">🦖</div>Guía de programación</div><div class="spacer"></div><span class="pill ghost">Hoy · lunes 9 de noviembre</span><div class="clock">15:12</div></div>
+  <div class="tile detail">
+    <div class="poster"><div class="art art-lumen">🌅</div></div>
+    <div>
+      <div style="display:flex;gap:8px;margin-bottom:8px"><span class="badge new">NUEVO EPISODIO</span><span class="badge lin">LINEAL</span><span class="badge" style="background:var(--ink-2)">TP</span></div>
+      <h2>Las Crónicas de Lumen</h2>
+      <div class="bold" style="color:var(--sky-d);font-size:18px">Hoy 16:00 – 17:00 · T2 Ep. 3 y 4 · Canal 1</div>
+      <p>Lumen y su tripulación llegan a la ciudad flotante de Aurea, donde nadie recuerda el día de ayer. Dos capítulos seguidos con un corte.</p>
+    </div>
+  </div>
+  <div class="tile epg">
+    <div class="times"><span></span><span>15:00</span><span>16:00</span><span>17:00</span><span>18:00</span><span>19:00</span><span>20:00</span></div>
+    <div class="now"></div>
+    <div class="row"><div class="chn">1 🦖 DinoTV</div><div class="lane">
+      <div class="prog c1" style="left:0;width:16.2%">Dino Rangers<small>T1 · Ep. 14</small></div>
+      <div class="prog c2 sel" style="left:16.7%;width:16.2%">Crónicas de Lumen<small>T2 · Ep. 3‑4</small></div>
+      <div class="prog c3" style="left:33.4%;width:16.2%">Mecha Kaiju Z<small>Ep. 7</small></div>
+      <div class="prog c1" style="left:50.1%;width:8%">Dino Cortos<small>Relleno</small></div>
+      <div class="prog c2" style="left:58.4%;width:24.6%">Ninja Byte · Maratón<small>Ep. 1‑3</small></div>
+      <div class="prog c4" style="left:83.4%;width:16.6%">🎬 Cine de Lunes<small>Capitán Cometa: la película</small></div></div></div>
+    <div class="row"><div class="chn">2 🧸 Kids</div><div class="lane">
+      <div class="prog c3" style="left:0;width:8%">Detective Mochi<small>Ep. 31</small></div>
+      <div class="prog c3" style="left:8.4%;width:8%">Mochi<small>Ep. 32</small></div>
+      <div class="prog c1" style="left:16.7%;width:33%">Tarde de Cortos<small>Episódica · aleatorio</small></div>
+      <div class="prog c2" style="left:50.1%;width:16.3%">Capitán Cometa<small>Ep. 12 <span class="badge rep">REP</span></small></div>
+      <div class="prog c4" style="left:66.8%;width:33.2%">Fin de emisión 19:00 → 07:00<small>Buenas noches</small></div></div></div>
+    <div class="row"><div class="chn">3 🌙 Noche</div><div class="lane">
+      <div class="prog c4" style="left:0;width:50%">Carta de ajuste<small>Inicia a las 18:00</small></div>
+      <div class="prog c2" style="left:50.1%;width:33%">Noche de Terror: El Faro<small><span class="badge">ESTRENO</span></small></div>
+      <div class="prog c1" style="left:83.4%;width:16.6%">Ninja Byte<small>Ep. 4</small></div></div></div>
+  </div>
+  <div class="bottombar"><span class="pill"><span class="btn-key a">A</span>Ver ahora / Recordar</span><span class="pill"><span class="btn-key x">X</span>Más info</span><span class="pill"><span class="btn-key y">Y</span>● Grabar</span><div style="flex:1"></div><span class="pill ghost">◀ ▶ Día</span><span class="pill ghost"><span class="btn-key b">B</span>Volver</span></div>
+</div></body></html>

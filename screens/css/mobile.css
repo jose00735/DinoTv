@@ -1,0 +1,14 @@
+.statusbar{height:54px;flex:none;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 6px;font-weight:800;font-size:14px}
+.appbar{flex:none;display:flex;align-items:center;gap:12px;padding:8px 18px 12px}
+.appbar h1{font-size:24px;font-weight:900;flex:1}
+.appbar .logo-dino{width:34px;height:34px;font-size:18px}
+.content{flex:1;overflow:hidden;padding:0 16px;position:relative}
+.nav{flex:none;height:84px;background:rgba(255,255,255,.96);border-top:1px solid #fff;box-shadow:0 -4px 16px rgba(0,40,80,.08);display:flex;justify-content:space-around;align-items:flex-start;padding-top:10px}
+.nav a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:800;color:var(--ink-3);text-decoration:none}
+.nav a .i{width:44px;height:30px;border-radius:15px;display:grid;place-items:center;font-size:19px}
+.nav a.on{color:var(--sky-d)} .nav a.on .i{background:var(--sky-l)}
+.card{background:#fff;border-radius:22px;border:3px solid #fff;box-shadow:var(--shadow);padding:14px;margin-bottom:12px;position:relative;overflow:hidden}
+.fab{position:absolute;right:18px;bottom:100px;width:62px;height:62px;border-radius:50%;background:linear-gradient(180deg,#4FC3F7,var(--sky-d));color:#fff;font-size:32px;display:grid;place-items:center;box-shadow:0 10px 24px rgba(2,136,209,.5);border:3px solid rgba(255,255,255,.7);z-index:6}
+.sec{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--ink-3);margin:6px 4px 8px}
+.chip{display:inline-flex;align-items:center;height:32px;padding:0 14px;border-radius:99px;background:#fff;border:2px solid rgba(58,74,90,.1);font-weight:800;font-size:13px;margin:0 6px 6px 0}
+.chip.on{background:var(--sky);color:#fff;border-color:var(--sky)}

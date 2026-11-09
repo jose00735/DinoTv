@@ -1,0 +1,84 @@
+/* DinoTV · sistema visual "DinoU" (estilo consola de sobremesa 2012) */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap');
+
+:root{
+  --sky:#29B6F6; --sky-d:#0288D1; --sky-l:#B3E5FC;
+  --teal:#00C2A8; --amber:#FFB300; --coral:#FF6F61; --violet:#8E7CFF; --lime:#8BD346;
+  --ink:#3A4A5A; --ink-2:#6B7B8C; --ink-3:#9AA8B5;
+  --bg1:#F7FAFC; --bg2:#E2E9F0; --card:#FFFFFF;
+  --line:rgba(58,74,90,.10);
+  --shadow:0 6px 18px rgba(0,40,80,.14);
+  --shadow-lg:0 14px 40px rgba(0,40,80,.20);
+  --r:24px;
+  --font:'M PLUS Rounded 1c','Nunito','Segoe UI Rounded','Arial Rounded MT Bold',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#cfd8e0;font-family:var(--font);color:var(--ink);-webkit-font-smoothing:antialiased}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+
+/* ---------- Escenarios ---------- */
+.stage-tv{width:1280px;height:720px;position:relative;overflow:hidden;border-radius:10px;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.stage-pc{width:1440px;height:900px;position:relative;overflow:hidden;border-radius:12px;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));box-shadow:0 30px 80px rgba(0,0,0,.35);display:flex}
+.phone{width:390px;height:844px;border-radius:52px;padding:12px;background:#1d232b;box-shadow:0 30px 70px rgba(0,0,0,.4);position:relative}
+.phone .screen{width:100%;height:100%;border-radius:42px;overflow:hidden;position:relative;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));display:flex;flex-direction:column}
+.phone .notch{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:110px;height:30px;background:#1d232b;border-radius:20px;z-index:20}
+
+/* Rejilla de fondo + burbujas */
+.grid-bg::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:32px 32px;mask-image:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.15))}
+.bubbles span{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.9),rgba(41,182,246,.18));filter:blur(1px);opacity:.7}
+
+/* ---------- Barras ---------- */
+.topbar{position:absolute;top:0;left:0;right:0;height:64px;display:flex;align-items:center;gap:16px;padding:0 32px;
+  background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.6));border-bottom:1px solid rgba(255,255,255,.9);
+  box-shadow:0 2px 12px rgba(0,40,80,.06);z-index:5}
+.topbar .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:22px;color:var(--sky-d)}
+.topbar .spacer{flex:1}
+.topbar .clock{font-weight:800;font-size:22px;background:#fff;border-radius:999px;padding:6px 18px;box-shadow:var(--shadow)}
+.bottombar{position:absolute;left:0;right:0;bottom:0;height:72px;display:flex;align-items:center;gap:14px;padding:0 32px;
+  background:linear-gradient(0deg,rgba(255,255,255,.98),rgba(255,255,255,.7));border-top:1px solid #fff;box-shadow:0 -2px 12px rgba(0,40,80,.06);z-index:5}
+
+/* ---------- Componentes ---------- */
+.logo-dino{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--sky),var(--teal));
+  display:grid;place-items:center;color:#fff;font-size:22px;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12),var(--shadow)}
+.pill{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;background:#fff;
+  font-weight:700;font-size:16px;color:var(--ink);box-shadow:var(--shadow);border:2px solid #fff}
+.pill.primary{background:linear-gradient(180deg,#4FC3F7,var(--sky-d));color:#fff;border-color:rgba(255,255,255,.6)}
+.pill.ghost{background:rgba(255,255,255,.5);box-shadow:none;border-color:rgba(58,74,90,.12)}
+.btn-key{width:26px;height:26px;border-radius:50%;display:inline-grid;place-items:center;font-size:13px;font-weight:900;color:#fff;background:var(--ink-2)}
+.btn-key.a{background:var(--sky-d)} .btn-key.b{background:var(--coral)} .btn-key.x{background:var(--teal)} .btn-key.y{background:var(--amber)}
+.tile{background:var(--card);border-radius:var(--r);border:4px solid #fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.tile.focus{transform:scale(1.06);box-shadow:0 0 0 5px var(--sky),0 0 30px 8px rgba(41,182,246,.45),var(--shadow-lg);z-index:3}
+.badge{display:inline-block;white-space:nowrap;font-size:11px;font-weight:900;letter-spacing:.06em;padding:3px 9px;border-radius:8px;color:#fff;background:var(--coral)}
+.badge.rep{background:var(--ink-3)} .badge.live{background:#E53935} .badge.new{background:var(--teal)} .badge.lin{background:var(--violet)} .badge.epi{background:var(--amber);color:#4a3600}
+.progress{height:8px;border-radius:99px;background:rgba(58,74,90,.12);overflow:hidden}
+.progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--sky),var(--teal));border-radius:99px}
+.muted{color:var(--ink-2)} .tiny{font-size:12px} .bold{font-weight:800}
+
+/* "Pósters" ficticios generados con CSS */
+.art{position:absolute;inset:0;display:grid;place-items:center;font-size:64px;overflow:hidden}
+.art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.55))}
+.art-rangers{background:radial-gradient(circle at 70% 30%,#FFE082,transparent 40%),linear-gradient(135deg,#43A047,#00897B)}
+.art-cometa{background:radial-gradient(circle at 20% 20%,#fff 1px,transparent 2px) 0 0/22px 22px,linear-gradient(135deg,#283593,#7E57C2)}
+.art-ninja{background:linear-gradient(135deg,#212121,#455A64 60%,#00E676)}
+.art-lumen{background:radial-gradient(circle at 50% 110%,#FFCA28,transparent 55%),linear-gradient(180deg,#4FC3F7,#E1F5FE)}
+.art-mecha{background:linear-gradient(135deg,#E53935,#FF7043 50%,#FFCA28)}
+.art-mochi{background:radial-gradient(circle at 50% 45%,#FCE4EC 30%,transparent 31%),linear-gradient(135deg,#F48FB1,#CE93D8)}
+.art-isla{background:radial-gradient(ellipse at 50% 90%,#2E7D32 30%,transparent 31%),linear-gradient(180deg,#0277BD,#4FC3F7 60%,#FFE0B2)}
+.art-faro{background:radial-gradient(circle at 70% 25%,#FFF59D,transparent 20%),linear-gradient(180deg,#1A237E,#000)}
+.art-cortos{background:repeating-linear-gradient(45deg,#FFB300 0 18px,#FFCA28 18px 36px)}
+
+/* Video simulado */
+.video{position:absolute;inset:0;overflow:hidden}
+.video .scene{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 70% 75%,#2E7D32 0 22%,transparent 23%),
+  radial-gradient(ellipse at 20% 85%,#388E3C 0 25%,transparent 26%),
+  radial-gradient(circle at 80% 20%,#FFF59D 0 6%,#FFE082 7%,transparent 18%),
+  linear-gradient(180deg,#4FC3F7 0%,#B3E5FC 55%,#81C784 56%,#43A047 100%)}
+.video .dino-char{position:absolute;left:38%;bottom:18%;font-size:180px;filter:drop-shadow(0 12px 10px rgba(0,0,0,.3))}
+.dog{position:absolute;top:28px;right:34px;display:flex;align-items:center;gap:8px;opacity:.75;color:#fff;font-weight:900;font-size:20px;text-shadow:0 2px 6px rgba(0,0,0,.4)}
+.dog .logo-dino{width:34px;height:34px;font-size:19px}

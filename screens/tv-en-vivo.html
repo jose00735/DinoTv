@@ -1,0 +1,36 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DinoTV · En vivo</title><link rel="stylesheet" href="css/wiiu.css">
+<style>
+.lower{position:absolute;left:60px;bottom:200px;display:flex;align-items:stretch;filter:drop-shadow(0 10px 20px rgba(0,0,0,.3))}
+.lower .tag{background:linear-gradient(180deg,#FFCA28,#FF8F00);color:#3e2a00;font-weight:900;font-size:20px;padding:14px 22px;border-radius:20px 0 0 20px;display:flex;align-items:center;transform:skewX(-8deg)}
+.lower .body{background:#fff;padding:10px 28px;border-radius:0 20px 20px 0;display:flex;flex-direction:column;justify-content:center}
+.lower .body b{font-size:28px;font-weight:900;color:var(--sky-d)} .lower .body span{font-size:15px;color:var(--ink-2);font-weight:700}
+.osd{position:absolute;left:40px;right:40px;bottom:30px;height:148px;background:rgba(255,255,255,.93);border-radius:28px;border:4px solid #fff;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:24px;padding:0 26px}
+.osd .thumb{width:170px;height:104px;border-radius:16px;position:relative;overflow:hidden;flex:none}
+.osd h3{font-size:26px;font-weight:900} .osd .ep{color:var(--ink-2);font-weight:700;font-size:15px;margin:2px 0 10px}
+.osd .times{display:flex;justify-content:space-between;font-size:13px;font-weight:800;color:var(--ink-2);margin-top:6px}
+.osd .side{width:250px;border-left:2px dashed rgba(58,74,90,.15);padding-left:22px;flex:none}
+.osd .side small{font-weight:800;color:var(--ink-3);font-size:12px;letter-spacing:.08em}
+.chip-ch{position:absolute;top:26px;left:34px;background:rgba(255,255,255,.92);border-radius:18px;padding:8px 18px;font-weight:900;font-size:22px;color:var(--sky-d);box-shadow:var(--shadow)}
+.rating{position:absolute;top:84px;left:34px;background:rgba(0,0,0,.45);color:#fff;font-weight:900;padding:4px 12px;border-radius:8px;font-size:14px}
+</style></head><body>
+<div class="stage-tv">
+  <div class="video"><div class="scene"></div><div class="dino-char">🦖</div><div style="position:absolute;left:62%;bottom:26%;font-size:90px">🌋</div></div>
+  <div class="dog"><div class="logo-dino">🦖</div>DinoTV</div>
+  <div class="chip-ch">1 · DinoTV</div><div class="rating">TP · Todo público</div>
+  <div class="lower"><div class="tag"><span style="transform:skewX(8deg)">A CONTINUACIÓN</span></div><div class="body"><b>Las Crónicas de Lumen</b><span>16:00 · Dos episodios seguidos</span></div></div>
+  <div class="osd">
+    <div class="thumb"><div class="art art-rangers" style="font-size:50px">🦕</div></div>
+    <div style="flex:1">
+      <div style="display:flex;gap:8px;align-items:center"><h3>Dino Rangers</h3><span class="badge lin">LINEAL</span><span class="badge live">● EN VIVO</span></div>
+      <div class="ep">Temporada 1 · Episodio 14 de 24 · «El volcán despierta»</div>
+      <div class="progress" style="height:12px"><i style="width:86%"></i></div>
+      <div class="times"><span>15:30</span><span>Quedan 4 min · luego corte de 1:45</span><span>16:00</span></div>
+    </div>
+    <div class="side"><small>HOY MÁS TARDE</small>
+      <div class="bold" style="margin-top:6px">17:00 Mecha Kaiju Z</div>
+      <div class="bold">18:30 Ninja Byte · Maratón</div>
+      <div class="bold" style="color:var(--coral)">20:00 🎬 Cine de Lunes</div>
+    </div>
+  </div>
+</div></body></html>

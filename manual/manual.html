@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>DinoTV · Manual de uso</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap');
+:root{--sky:#29B6F6;--sky-d:#0288D1;--teal:#00C2A8;--amber:#FFB300;--coral:#FF6F61;--violet:#8E7CFF;--ink:#3A4A5A;--ink2:#6B7B8C;--bg:#F4F7FA}
+@page{size:A4;margin:16mm 15mm 18mm}
+@page :first{margin:0}
+*{box-sizing:border-box}
+body{font-family:'M PLUS Rounded 1c','Nunito',system-ui,sans-serif;color:var(--ink);font-size:10.5pt;line-height:1.55;margin:0;background:#fff}
+h1,h2,h3{font-weight:900;line-height:1.2}
+h2{font-size:20pt;color:var(--sky-d);margin:0 0 10px;display:flex;align-items:center;gap:10px;break-after:avoid}
+h2 .n{background:linear-gradient(135deg,var(--sky),var(--teal));color:#fff;border-radius:12px;width:38px;height:38px;display:inline-grid;place-items:center;font-size:16pt;flex:none}
+h3{font-size:13pt;margin:16px 0 6px;break-after:avoid}
+p{margin:6px 0}
+.chapter{break-before:page}
+.cover{height:297mm;width:210mm;position:relative;overflow:hidden;background:linear-gradient(160deg,#E1F5FE,#F4F7FA 40%,#E0F2F1);display:flex;flex-direction:column;justify-content:center;padding:0 22mm}
+.cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(58,74,90,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(58,74,90,.07) 1px,transparent 1px);background-size:28px 28px}
+.cover .logo{width:110px;height:110px;border-radius:32px;background:linear-gradient(135deg,var(--sky),var(--teal));display:grid;place-items:center;font-size:64px;box-shadow:0 14px 30px rgba(2,136,209,.35);position:relative}
+.cover h1{font-size:54pt;margin:24px 0 0;color:var(--sky-d);position:relative}
+.cover .sub{font-size:20pt;font-weight:800;color:var(--ink);position:relative}
+.cover .meta{margin-top:26px;font-weight:700;color:var(--ink2);position:relative}
+.cover img{position:absolute;right:-28mm;bottom:26mm;width:140mm;border-radius:14px;box-shadow:0 20px 50px rgba(0,40,80,.3);transform:rotate(-5deg)}
+.cover .tag{display:inline-block;background:var(--coral);color:#fff;font-weight:900;padding:4px 12px;border-radius:10px;font-size:10pt;margin-top:14px;position:relative}
+.toc{columns:2;column-gap:24px}
+.toc div{display:flex;gap:8px;padding:5px 0;border-bottom:1px dashed #d5dde5;font-weight:700;break-inside:avoid}
+.toc b{color:var(--sky-d);width:24px}
+figure{margin:10px 0 14px;text-align:center;break-inside:avoid}
+figure img{max-width:100%;border-radius:10px;box-shadow:0 6px 18px rgba(0,40,80,.18)}
+figure.phone img{width:56mm;box-shadow:none}
+figcaption{font-size:9pt;color:var(--ink2);font-weight:700;margin-top:6px}
+.duo{break-inside:avoid;display:flex;gap:10mm;justify-content:center;align-items:flex-start}
+.duo figure{flex:none}
+.box{border-radius:14px;padding:10px 14px;margin:10px 0;break-inside:avoid;font-weight:500}
+.tip{background:#E0F7FA;border-left:6px solid var(--teal)}
+.warn{background:#FFF8E1;border-left:6px solid var(--amber)}
+.beta{background:#EDE7F6;border-left:6px solid var(--violet)}
+.box b:first-child{display:block;margin-bottom:2px}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:8px 0 12px;font-size:9.5pt;break-inside:avoid;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px #dfe6ec}
+th{background:var(--sky-d);color:#fff;text-align:left;padding:7px 9px;font-weight:800}
+td{padding:6px 9px;border-top:1px solid #e6ecf1;vertical-align:top}
+tr:nth-child(even) td{background:#F7FAFC}
+ol,ul{padding-left:20px;margin:6px 0}
+li{margin:3px 0}
+.key{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--ink2);color:#fff;font-size:8.5pt;font-weight:900}
+.key.a{background:var(--sky-d)}.key.b{background:var(--coral)}.key.x{background:var(--teal)}.key.y{background:var(--amber)}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;position:relative;padding:6px 0 6px 38px;break-inside:avoid}
+.steps li::before{content:counter(s);position:absolute;left:0;top:5px;width:26px;height:26px;border-radius:50%;background:var(--sky);color:#fff;font-weight:900;display:grid;place-items:center}
+.pill{display:inline-block;background:#fff;border:2px solid #dfe6ec;border-radius:99px;padding:0 9px;font-weight:800;font-size:9pt}
+.small{font-size:9pt;color:var(--ink2)}
+</style></head><body>
+
+<section class="cover">
+  <div class="logo">🦖</div>
+  <h1>DinoTV</h1>
+  <div class="sub">Manual de uso</div>
+  <div class="small" style="font-size:12pt;max-width:110mm;position:relative;margin-top:10px">Tu propio canal de televisión: tus series y películas a horas exactas, con promos, cortes y estrenos. Controlado desde tu móvil Android.</div>
+  <span class="tag">Edición preliminar · basada en las maquetas de diseño</span>
+  <div class="meta">Versión 0.1 (Beta planificada) · Noviembre 2026</div>
+  <img src="img/tv-menu.jpg" alt="">
+</section>
+
+<section class="chapter">
+  <h2>Contenido</h2>
+  <div class="toc">
+    <div><b>1</b>Bienvenido a DinoTV</div>
+    <div><b>2</b>Qué necesitas</div>
+    <div><b>3</b>Instalación y primer arranque</div>
+    <div><b>4</b>Emparejar tu móvil</div>
+    <div><b>5</b>Ver televisión</div>
+    <div><b>6</b>La guía de programación</div>
+    <div><b>7</b>La app: pantalla «Al aire»</div>
+    <div><b>8</b>Organizar la parrilla</div>
+    <div><b>9</b>Reprogramar</div>
+    <div><b>10</b>Wizard: agregar series y películas</div>
+    <div><b>11</b>Agregar nuevos capítulos (append)</div>
+    <div><b>12</b>Estrenos y promos</div>
+    <div><b>13</b>Fin de emisión</div>
+    <div><b>14</b>Media Center en PC</div>
+    <div><b>15</b>Beta vs. versión Final</div>
+    <div><b>16</b>Preguntas frecuentes</div>
+    <div><b>17</b>Glosario rápido</div>
+  </div>
+  <div class="box warn"><b>Sobre este manual</b>DinoTV está en fase de diseño. Las imágenes son maquetas de las pantallas planificadas y pueden cambiar durante el desarrollo. Las funciones marcadas con <span class="pill">FINAL</span> llegan en la segunda etapa del proyecto.</div>
+
+  <h2 style="margin-top:22px"><span class="n">1</span>Bienvenido a DinoTV</h2>
+  <p>¿Recuerdas llegar a casa y saber que a las 4 de la tarde daban tu caricatura favorita? ¿Ver una promo de una película y contar los días hasta el sábado? DinoTV convierte tu colección de series y películas en <b>un canal de televisión que nunca se detiene</b>.</p>
+  <ul>
+    <li><b>Siempre al aire:</b> al encender la TV, el programa ya está en curso, justo en el minuto que corresponde.</li>
+    <li><b>Horarios exactos:</b> cada programa empieza a su hora; los espacios entre programas se llenan con promos, cortinillas y anuncios.</li>
+    <li><b>Tú eres el director del canal:</b> desde tu móvil decides qué se emite, cuándo y por cuánto tiempo.</li>
+    <li><b>Estética amable:</b> menús luminosos y redondeados, al estilo de las consolas de sobremesa de 2012.</li>
+  </ul>
+  <div class="box tip"><b>Idea clave</b>DinoTV no es una lista de reproducción: es el reloj el que manda. Si te pierdes un episodio, pasará como en la TV de antes… ¡a menos que lo grabes <span class="pill">FINAL</span> o lo repitas desde la parrilla!</div>
+
+  <h2 style="margin-top:22px"><span class="n">2</span>Qué necesitas</h2>
+  <table>
+    <tr><th>Equipo</th><th>Requisito</th></tr>
+    <tr><td>Caja DinoTV (recomendado)</td><td>Mini-PC Intel N100 o Raspberry Pi 5 conectado al televisor por HDMI</td></tr>
+    <tr><td>o un PC</td><td>Windows 10+, macOS 13+ o Linux (para el modo Media Center)</td></tr>
+    <tr><td>Móvil</td><td>Android 8.0 o superior, en la misma red Wi-Fi</td></tr>
+    <tr><td>Contenido</td><td>Tus archivos de video (mkv, mp4, avi, webm) en un disco o carpeta de red</td></tr>
+    <tr><td>Control</td><td>Teclado, control de TV (HDMI-CEC, <span class="pill">FINAL</span>), gamepad o la app móvil</td></tr>
+  </table>
+  <div class="box warn"><b>Importante</b>DinoTV solo reproduce archivos que ya tienes. No descarga ni distribuye contenido.</div>
+</section>
+
+<section class="chapter">
+  <h2><span class="n">3</span>Instalación y primer arranque</h2>
+  <ol class="steps">
+    <li>Instala DinoTV en la caja o PC (instalador <code>.deb</code>, <code>.exe</code> o <code>.dmg</code>).</li>
+    <li>Al iniciar por primera vez, elige el <b>idioma</b>, la <b>zona horaria</b> y el formato de hora (12 h / 24 h).</li>
+    <li>Indica las <b>carpetas</b> donde están tus series y películas. DinoTV las analizará (puede tardar unos minutos).</li>
+    <li>Ponle nombre y número a tu primer canal (por ejemplo, <i>1 · DinoTV</i>) y elige su color.</li>
+    <li>Mientras no haya parrilla, el canal emite la <b>carta de ajuste</b> con el mensaje «Configura tu parrilla desde la app».</li>
+  </ol>
+  <div class="box tip"><b>Consejo</b>Organiza tus series en carpetas por título y usa nombres como <code>S01E02</code> o <code>1x02</code>: el asistente las ordenará solo.</div>
+
+  <h2 style="margin-top:20px"><span class="n">4</span>Emparejar tu móvil</h2>
+  <ol class="steps">
+    <li>Instala la app <b>DinoTV</b> en tu Android y ábrela.</li>
+    <li>La app busca DinoTV en tu red. Si aparece, tócalo.</li>
+    <li>En la TV, ve al mosaico <b>Emparejar móvil</b> del menú principal: verás un código QR y un código de 6 dígitos.</li>
+    <li>Escanea el QR con la app (o escribe el código). ¡Listo! Tu móvil ya es el control maestro.</li>
+  </ol>
+  <p class="small">Puedes emparejar varios móviles. En <span class="pill">FINAL</span> podrás asignar perfiles: <i>Administrador</i> (cambia la parrilla) o <i>Solo ver</i>.</p>
+
+  <h2 style="margin-top:20px"><span class="n">5</span>Ver televisión</h2>
+  <h3>Menú principal</h3>
+  <figure><img src="img/tv-menu.jpg" alt=""><figcaption>Menú principal: cada canal muestra lo que se emite ahora y su progreso.</figcaption></figure>
+  <p>Al pulsar <b>Menú</b>, el canal sigue emitiéndose en su mosaico: la televisión nunca se detiene. Mueve el foco con las flechas; el mosaico seleccionado crece y brilla en celeste.</p>
+  <table>
+    <tr><th>Botón</th><th>Acción</th></tr>
+    <tr><td><span class="key a">A</span> / OK</td><td>Abrir / ver el canal seleccionado</td></tr>
+    <tr><td><span class="key b">B</span> / Atrás</td><td>Volver al canal en vivo</td></tr>
+    <tr><td><span class="key x">X</span> / Info</td><td>Mostrar información del programa</td></tr>
+    <tr><td><span class="key y">Y</span> / Guía</td><td>Abrir la guía de programación</td></tr>
+    <tr><td>CH+ / CH−</td><td>Cambiar de canal</td></tr>
+  </table>
+</section>
+
+<section class="chapter">
+  <h3>En vivo</h3>
+  <figure><img src="img/tv-en-vivo.jpg" alt=""><figcaption>Emisión en vivo con mosca del canal, rótulo «A continuación» y panel de información.</figcaption></figure>
+  <ul>
+    <li><b>Mosca:</b> el logo del canal en la esquina superior derecha.</li>
+    <li><b>Clasificación:</b> aparece unos segundos al empezar cada programa (TP, +7, +13…).</li>
+    <li><b>A continuación:</b> unos 45 segundos antes del final, un rótulo anuncia el siguiente programa.</li>
+    <li><b>Panel de información</b> (<span class="key x">X</span>): título, temporada y episodio, progreso, tiempo restante y lo que viene más tarde.</li>
+  </ul>
+  <div class="box tip"><b>¿Encendiste tarde?</b>Si el episodio empezó a las 15:00 y enciendes a las 15:12, lo verás desde el minuto 12, como en la TV de verdad.</div>
+
+  <h2 style="margin-top:20px"><span class="n">6</span>La guía de programación</h2>
+  <figure><img src="img/tv-guia.jpg" alt=""><figcaption>Guía: canales en filas, horas en columnas y la línea roja marca «ahora».</figcaption></figure>
+  <ul>
+    <li>Arriba verás el detalle del programa seleccionado: póster, horario, episodio y sinopsis.</li>
+    <li>Insignias: <b>ESTRENO</b>, <b>NUEVO EPISODIO</b>, <b>REP</b> (repetición), <b>LINEAL</b>.</li>
+    <li><span class="key a">A</span> sobre un programa futuro → <b>Recordar</b> (aviso en TV y móvil <span class="pill">FINAL</span>).</li>
+    <li><span class="key y">Y</span> → <b>Grabar</b> el programa como una cinta VHS <span class="pill">FINAL</span>.</li>
+    <li>◀ ▶ en los bordes cambian de día.</li>
+  </ul>
+</section>
+
+<section class="chapter">
+  <h2><span class="n">7</span>La app: pantalla «Al aire»</h2>
+  <div class="duo">
+    <figure class="phone"><img src="img/movil-al-aire.jpg" alt=""><figcaption>«Al aire» en el móvil.</figcaption></figure>
+    <div style="max-width:95mm">
+      <p>Es la pantalla de inicio de la app. Muestra:</p>
+      <ul>
+        <li>El programa que se emite ahora, con su progreso en tiempo real.</li>
+        <li>Accesos rápidos: <b>Reprogramar siguiente</b> y <b>Control remoto</b>.</li>
+        <li>Las <b>próximas 6 horas</b> con el color de cada franja.</li>
+      </ul>
+      <p>Cambia de canal con el selector de la esquina superior.</p>
+      <h3>Navegación de la app</h3>
+      <table>
+        <tr><th>Pestaña</th><th>Para qué sirve</th></tr>
+        <tr><td>📡 Al aire</td><td>Qué se emite y qué sigue</td></tr>
+        <tr><td>🗓️ Parrilla</td><td>Editar la programación semanal</td></tr>
+        <tr><td>📚 Biblioteca</td><td>Series, películas, wizard</td></tr>
+        <tr><td>🎬 Estrenos</td><td>Películas y especiales anunciados</td></tr>
+        <tr><td>⋯ Más</td><td>Promos, canales, control remoto, ajustes</td></tr>
+      </table>
+    </div>
+  </div>
+
+  </section><section class="chapter"><h2><span class="n">8</span>Organizar la parrilla</h2>
+  <div class="duo">
+    <div style="max-width:95mm">
+      <p>La parrilla muestra la semana con un bloque de color por programa.</p>
+      <h3>Crear un horario (regla)</h3>
+      <ol class="steps">
+        <li>Toca <b>＋</b>.</li>
+        <li>Elige los <b>días</b> (por ejemplo L-V) y la <b>hora de inicio</b>.</li>
+        <li>Elige la <b>duración del bloque</b>: 30, 60, 90, 120 min o libre. Así decides <b>cuántas horas</b> tiene cada serie.</li>
+        <li>Elige la serie o película y cuántos episodios por bloque.</li>
+        <li>Opcional: la franja (Matiné, Anime…), cortes comerciales y desde qué fecha aplica.</li>
+      </ol>
+      <h3>Mover y editar</h3>
+      <ul>
+        <li><b>Arrastra</b> un bloque para moverlo; si empuja otros programas, la app te avisa.</li>
+        <li><b>Mantén pulsado</b> para Reprogramar, Duplicar o Cancelar.</li>
+        <li><b>Pellizca</b> para acercar (hasta bloques de 15 min).</li>
+        <li>Toca un bloque para ver su contenido <b>al segundo</b>: episodios, cortes, promos y relleno.</li>
+      </ul>
+    </div>
+    <figure class="phone"><img src="img/movil-parrilla.jpg" alt=""><figcaption>Parrilla semanal con arrastrar y soltar.</figcaption></figure>
+  </div>
+</section>
+
+<section class="chapter">
+  <h3>Tipos de serie</h3>
+  <table>
+    <tr><th>Tipo</th><th>Cómo se emite</th><th>Ideal para</th></tr>
+    <tr><td><b>Lineal</b></td><td>En orden estricto, un capítulo tras otro. DinoTV recuerda en qué capítulo va.</td><td>Anime con historia continua, series con temporadas</td></tr>
+    <tr><td><b>Episódica</b></td><td>En orden aleatorio, sin repetir hasta haber pasado todos.</td><td>Caricaturas, comedias, cortos</td></tr>
+    <tr><td><b>Mixta</b></td><td>Aleatoria, pero los arcos marcados se emiten completos y en orden.</td><td>Series con «arcos» de varios episodios</td></tr>
+  </table>
+  <h3>¿Y si el programa no llena el bloque?</h3>
+  <p>DinoTV calcula el tiempo sobrante y lo rellena con continuidad: cortinilla, promo de «A continuación», promos de la semana, tus anuncios y el logo del canal. El último segundo se ajusta con un cartón animado para que el siguiente programa empiece <b>exactamente</b> a su hora.</p>
+  <h3>¿Y si el programa no cabe?</h3>
+  <table>
+    <tr><th>Opción</th><th>Qué hace</th></tr>
+    <tr><td>Recortar créditos (por defecto)</td><td>Acorta los créditos finales lo necesario</td></tr>
+    <tr><td>Quitar el último episodio</td><td>Se emite en el siguiente bloque (no se pierde)</td></tr>
+    <tr><td>Empujar el siguiente</td><td>Retrasa lo que viene después</td></tr>
+    <tr><td>Permitir que se pase</td><td>Útil para películas largas</td></tr>
+  </table>
+
+  <h2 style="margin-top:18px"><span class="n">9</span>Reprogramar</h2>
+  <div class="duo">
+    <figure class="phone"><img src="img/movil-reprogramar.jpg" alt=""><figcaption>Hoja de reprogramación.</figcaption></figure>
+    <div style="max-width:95mm">
+      <p>Reprogramar cambia <b>una emisión concreta</b> sin tocar el horario habitual.</p>
+      <table>
+        <tr><th>Acción</th><th>Uso</th></tr>
+        <tr><td>🔄 Sustituir</td><td>Poner otra serie o una película en ese bloque</td></tr>
+        <tr><td>↔️ Mover</td><td>Pasar el bloque a otra hora o día</td></tr>
+        <tr><td>🔀 Intercambiar</td><td>Cambiar dos bloques entre sí</td></tr>
+        <tr><td>⛔ Cancelar</td><td>Quitar la emisión (se llena con relleno)</td></tr>
+      </table>
+      <div class="box tip"><b>No se pierden capítulos</b>Si cancelas o sustituyes una serie lineal, el capítulo que tocaba se emitirá en la siguiente ocasión.</div>
+      <p>Activa <b>«Anunciar cambio de programación»</b> para que la TV muestre un aviso, como hacían los canales de verdad. Puedes reprogramar lo que viene después incluso mientras se emite el programa actual.</p>
+    </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <h2><span class="n">10</span>Wizard: agregar series y películas</h2>
+  <div class="duo">
+    <div style="max-width:95mm">
+      <p>El asistente te guía para agregar contenido <b>y dejarlo programado</b> en un par de minutos. Ábrelo desde <b>Biblioteca → ＋</b>.</p>
+      <h3>Nueva serie (6 pasos)</h3>
+      <ol class="steps">
+        <li><b>Origen:</b> elige la carpeta o los archivos.</li>
+        <li><b>Identidad:</b> título, póster, color y clasificación.</li>
+        <li><b>Tipo:</b> lineal, episódica o mixta.</li>
+        <li><b>Orden:</b> revisa el orden de los capítulos; arrastra para corregir. El asistente avisa si falta alguno o hay duplicados.</li>
+        <li><b>Horario:</b> días, hora y duración. Dimensiona por <i>episodios</i> o por <i>tiempo</i>; la barra de ocupación muestra cuánto es serie, cortes y promos. Verás cuándo terminará la serie.</li>
+        <li><b>Promo y resumen:</b> activa la campaña «¡Nueva serie!» y confirma.</li>
+      </ol>
+    </div>
+    <figure class="phone"><img src="img/movil-wizard.jpg" alt=""><figcaption>Paso 5: elegir horario y duración.</figcaption></figure>
+  </div>
+  <h3>¿Qué pasa cuando termina la serie?</h3>
+  <table>
+    <tr><th>Opción</th><th>Resultado</th></tr>
+    <tr><td>Repetir</td><td>Vuelve al capítulo 1 con la insignia REPETICIÓN</td></tr>
+    <tr><td>Siguiente temporada</td><td>Continúa con la temporada siguiente si existe</td></tr>
+    <tr><td>Retirar</td><td>El bloque pasa a relleno y la app te pide un reemplazo</td></tr>
+    <tr><td>Sustituir</td><td>Otra serie ocupa el horario, con promo «¡Nueva serie!»</td></tr>
+  </table>
+  <h3>Nueva película</h3>
+  <p>Elige el archivo, completa los datos y decide <b>cuándo</b>: como <b>Estreno</b> (un día y hora únicos), en un <b>Ciclo</b> (por ejemplo «Cine de los lunes») o <b>solo en la biblioteca</b>. Si la película es más larga que el bloque, el asistente te propone soluciones.</p>
+</section>
+
+<section class="chapter">
+  <h2><span class="n">11</span>Agregar nuevos capítulos (append)</h2>
+  <div class="duo">
+    <figure class="phone"><img src="img/movil-append.jpg" alt=""><figcaption>Agregar episodios nuevos al final.</figcaption></figure>
+    <div style="max-width:95mm">
+      <p>Cuando copias capítulos nuevos en la carpeta de una serie, DinoTV los detecta y la serie muestra la insignia <b>«N nuevos»</b> (y una notificación <span class="pill">FINAL</span>).</p>
+      <ol class="steps">
+        <li>Abre el aviso o la serie y toca <b>Agregar episodios</b>.</li>
+        <li>Revisa la lista: se agregan <b>al final</b>, después del último capítulo. Desmarca duplicados.</li>
+        <li>Si la serie estaba en repetición, elige: terminar la vuelta y luego seguir, o saltar ya a los nuevos.</li>
+        <li>Si la serie estaba retirada, puedes reactivarla con su horario anterior.</li>
+        <li>Activa la promo «¡Nuevos episodios!» y confirma.</li>
+      </ol>
+      <div class="box tip"><b>Seguro</b>Agregar capítulos nunca cambia la numeración ni el punto en que va la serie, salvo que tú lo elijas.</div>
+    </div>
+  </div>
+
+  </section><section class="chapter"><h2><span class="n">12</span>Estrenos y promos</h2>
+  <figure><img src="img/tv-promo.jpg" alt="" style="width:150mm"><figcaption>Promo de estreno generada automáticamente: título, día, hora y cuenta regresiva.</figcaption></figure>
+  <ol class="steps">
+    <li>En <b>Estrenos → ＋</b> elige la película o episodio especial, el día y la hora.</li>
+    <li>Elige la insignia: ESTRENO, ESPECIAL, MARATÓN o FINAL DE TEMPORADA.</li>
+    <li>Indica cuántos días antes empieza la <b>campaña de promos</b> (por defecto 5).</li>
+  </ol>
+  <p>Durante la campaña, las promos aparecen cada vez más a menudo: «Este sábado 8 PM» → «Mañana» → «Hoy 8 PM» → «En minutos». En la etapa Beta las promos usan póster, texto y música; en la <span class="pill">FINAL</span> incluyen clips del propio contenido, elegidos sin destripar el final, y voz de locutor.</p>
+  <p class="small">Desde <b>Más → Continuidad</b> puedes ver las promos generadas, agregar tus propios anuncios retro y elegir el paquete de identidad de cada franja (Clásico, Acción, Matiné, Nocturno, Halloween, Navidad).</p>
+</section>
+
+<section class="chapter">
+  <h2><span class="n">13</span>Fin de emisión</h2>
+  <figure><img src="img/tv-carta-ajuste.jpg" alt="" style="width:150mm"><figcaption>Carta de ajuste durante el fin de emisión nocturno.</figcaption></figure>
+  <p>En <b>Más → Canales</b> puedes definir un horario de <b>fin de emisión</b> (por ejemplo, de 02:00 a 06:00). El canal se despide, muestra la carta de ajuste con la hora y regresa a la hora indicada con su secuencia de «Buenos días». Si no lo configuras, el canal emite las 24 horas (con repeticiones nocturnas si quieres).</p>
+
+  <h2 style="margin-top:18px"><span class="n">14</span>Media Center en PC</h2>
+  <figure><img src="img/pc-media-center.jpg" alt=""><figcaption>Monitor de continuidad en el Media Center: emisión, cola al segundo, alertas y semana.</figcaption></figure>
+  <p>En un PC, DinoTV funciona como televisor y como «sala de control». El <b>Monitor de continuidad</b> muestra qué se emite, la cola exacta de lo que viene (episodios, cortes, promos y ajustes), el desfase respecto a la hora programada y las alertas (por ejemplo, un archivo que falta). Desde el panel lateral puedes editar la parrilla con el ratón, usar el wizard y ver el registro de emisión <span class="pill">FINAL</span>.</p>
+</section>
+
+<section class="chapter">
+  <h2><span class="n">15</span>Beta vs. versión Final</h2>
+  <table>
+    <tr><th>Función</th><th>Beta</th><th>Final</th></tr>
+    <tr><td>Canal 24/7 a hora exacta, encendido a mitad de programa</td><td>✔</td><td>✔</td></tr>
+    <tr><td>Series lineales, episódicas y mixtas · películas · estrenos</td><td>✔</td><td>✔</td></tr>
+    <tr><td>Parrilla, reprogramaciones y wizard desde Android</td><td>✔</td><td>✔</td></tr>
+    <tr><td>Relleno exacto, cortes, cortinillas, «A continuación»</td><td>✔</td><td>✔</td></tr>
+    <tr><td>Promos con póster y texto</td><td>✔</td><td>✔</td></tr>
+    <tr><td>Promos con clips, «Anteriormente en…», voz de locutor</td><td>—</td><td>✔</td></tr>
+    <tr><td>Varios canales simultáneos y zapping con estática</td><td>Uno al aire</td><td>✔</td></tr>
+    <tr><td>Filtro CRT / VHS, teletexto, ticker</td><td>—</td><td>✔</td></tr>
+    <tr><td>Cliente Android TV</td><td>—</td><td>✔</td></tr>
+    <tr><td>Media Center con administración completa</td><td>Básico</td><td>✔</td></tr>
+    <tr><td>Grabaciones VCR, recordatorios, votación «Tú decides»</td><td>—</td><td>✔</td></tr>
+    <tr><td>Perfiles, control parental, HDMI-CEC</td><td>—</td><td>✔</td></tr>
+  </table>
+
+  <h2 style="margin-top:18px"><span class="n">16</span>Preguntas frecuentes</h2>
+  <h3>¿Puedo pausar?</h3>
+  <p>Por defecto no: es televisión. Puedes activar el <b>modo flexible</b> <span class="pill">FINAL</span>, que permite pausar y desplaza el resto del día.</p>
+  <h3>Cancelé un episodio, ¿se lo salta?</h3>
+  <p>No. En las series lineales el capítulo pendiente pasa a la siguiente emisión.</p>
+  <h3>Falta un archivo, ¿qué verá la TV?</h3>
+  <p>Un ident del canal y el cartón «Volvemos enseguida» hasta el siguiente programa. La app te avisa para que lo resuelvas.</p>
+  <h3>Se fue la luz.</h3>
+  <p>Al volver, DinoTV retoma la emisión en el punto exacto que corresponde a la hora actual.</p>
+  <h3>Mis series están en otro idioma.</h3>
+  <p>En cada serie puedes elegir el idioma de audio y de subtítulos preferido.</p>
+  <h3>¿Necesito internet?</h3>
+  <p>No. Internet solo es opcional para sincronizar la hora y descargar pósters y sinopsis.</p>
+
+  <h2 style="margin-top:18px"><span class="n">17</span>Glosario rápido</h2>
+  <table>
+    <tr><th>Término</th><th>Significado</th></tr>
+    <tr><td>Parrilla</td><td>La programación semanal del canal</td></tr>
+    <tr><td>Franja</td><td>Bloque horario con nombre y estilo (Matiné, Anime…)</td></tr>
+    <tr><td>Cortinilla</td><td>Clip corto de «Ya volvemos» / «Regresamos con…»</td></tr>
+    <tr><td>Promo</td><td>Anuncio de un programa futuro con día y hora</td></tr>
+    <tr><td>Mosca</td><td>Logo del canal en la esquina de la pantalla</td></tr>
+    <tr><td>Append</td><td>Agregar capítulos nuevos al final de una serie</td></tr>
+    <tr><td>Relleno</td><td>Material que completa el tiempo hasta la siguiente hora exacta</td></tr>
+    <tr><td>Carta de ajuste</td><td>Imagen que se emite en el fin de emisión</td></tr>
+  </table>
+</section>
+</body></html>
